@@ -73,7 +73,8 @@ input_text = st.text_area(
 )
 
 char_count = len(input_text)
-st.caption(f"{char_count} / 5000 characters")
+remaining = 5000 - char_count
+st.caption(f"{char_count} / 5000 characters  |  {remaining} remaining")
 
 translate_btn = st.button("Translate", type="primary", use_container_width=True)
 
