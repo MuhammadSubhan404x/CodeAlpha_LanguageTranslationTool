@@ -99,7 +99,6 @@ if translate_btn:
                 with res_col2:
                     st.write("")
                     st.write("")
-                    copy_text = result
                     st.download_button(
                         label="Save",
                         data=result,
@@ -107,8 +106,8 @@ if translate_btn:
                         mime="text/plain"
                     )
 
-                tgt_code_clean = tgt_code.lower()
-                if tgt_code_clean in GTTS_SUPPORTED:
+                tgt_code_clean = tgt_code
+                if tgt_code_clean in GTTS_SUPPORTED or tgt_code_clean.lower() in GTTS_SUPPORTED:
                     try:
                         tts = gTTS(text=result, lang=tgt_code_clean)
                         audio_buf = io.BytesIO()
